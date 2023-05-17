@@ -31,6 +31,7 @@ if not os.path.exists(csv_file_path):
 
 # Dictionnaire pour stocker les totaux
 totals = {'divers': 0}
+total_cost_column = 0
 
 try:
     # Ouverture du fichier CSV
@@ -76,11 +77,19 @@ try:
             if not found_specific_term:
                 totals['divers'] += cost
 
+            total_cost_column += cost
+
+
     # Préparation du tableau des totaux
     table = []
     for category, total_cost in totals.items():
         total_cost = round(total_cost, 2)
         table.append([category, f"{total_cost} €"])
+
+    # Ajoute une ligne de coût total dans le csv
+    total_cost_column = round(total_cost_column, 2)
+    table.append([colored("Total", "red"), colored(f"{total_cost_column} €", "red")])
+
 
     # Affichage du tableau
     print(tabulate(table, headers=[colored("Catégorie", "cyan"), colored("Coût Total (€)", "cyan")], tablefmt="fancy_grid"))
