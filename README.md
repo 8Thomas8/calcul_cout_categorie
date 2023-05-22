@@ -22,7 +22,7 @@ Avant d'utiliser ce script, assurez-vous d'avoir les éléments suivants install
 
 ## Utilisation
 
-1. Placez votre fichier CSV contenant les données dans le répertoire `Desktop/test` du projet et renommez-le en `data.csv`.
+1. Placez votre fichier CSV contenant le répertoire du projet et renommez-le en `data.csv`.
 
 2. Renommez le fichier `termes.json.exemple` en `termes.json`.
 
